@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package classe;
+import java.sql.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,14 +14,13 @@ import java.sql.SQLException;
  * @author abdel
  */
 public class connexionbd {
-     private static Connection c=null;
+
+    private static Connection c=null;
     public static Connection seconnecter() throws ClassNotFoundException, SQLException{
-        /*charger le pilote*/
+//        charger le pilote
         Class.forName("com.mysql.cj.jdbc.Driver");
-        /*connexion a la base de donnees*/
+//        Etablir la connection
         c=DriverManager.getConnection("jdbc:mysql://localhost:3306/gestetud","root","");
-        return  c;
+        return c;
     }
-    
-    
 }
