@@ -1,4 +1,5 @@
-*.xml
+build.xml
+build-impl.xml
 *.properties
 *.mf
 .netbeans_automatic_build
