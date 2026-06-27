@@ -85,7 +85,7 @@
                           <Component id="btnnouveau" min="-2" pref="97" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                           <Component id="btnenregistrer" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="69" max="32767" attributes="0"/>
+                          <EmptySpace pref="72" max="32767" attributes="0"/>
                           <Component id="btnannuler" min="-2" pref="93" max="-2" attributes="0"/>
                       </Group>
                   </Group>
