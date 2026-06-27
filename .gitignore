@@ -1,6 +1,0 @@
-build.xml
-build-impl.xml
-*.properties
-*.mf
-.netbeans_automatic_build
-.netbeans_update_resources
