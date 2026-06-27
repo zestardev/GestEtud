@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author abdel
  */
 public class connexionbd {
-    private static Connection c=null;
+     private static Connection c=null;
     public static Connection seconnecter() throws ClassNotFoundException, SQLException{
         /*charger le pilote*/
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -21,5 +21,6 @@ public class connexionbd {
         c=DriverManager.getConnection("jdbc:mysql://localhost:3306/gestetud","root","");
         return  c;
     }
+    
     
 }
