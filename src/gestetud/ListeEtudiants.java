@@ -55,7 +55,7 @@ public class ListeEtudiants extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Matricule", "Nom", "Prénom", "Filière"
+                "Matricule", "Nom", "Prénom"
             }
         ));
         jScrollPane1.setViewportView(tableEtudiants);

@@ -160,10 +160,16 @@ public class formaccuiel extends javax.swing.JFrame {
 
     private void EnregistrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnregistrerActionPerformed
         // TODO add your handling code here:
+        conteneur.removeAll();
+        FormulaireAjout2 form = new FormulaireAjout2();
+        form.setVisible(true);
+        form.setSize(637, 468);
+        conteneur.add(form);
     }//GEN-LAST:event_EnregistrerActionPerformed
 
     private void ListeEudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListeEudActionPerformed
-       ListeEtudiants liste = new ListeEtudiants();
+       conteneur.removeAll();
+        ListeEtudiants liste = new ListeEtudiants();
         liste.setVisible(true);
         liste.setSize(637, 468);
         conteneur.add(liste);
