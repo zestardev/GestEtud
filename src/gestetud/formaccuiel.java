@@ -4,6 +4,8 @@
  */
 package gestetud;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author abdel
@@ -26,13 +28,12 @@ public class formaccuiel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        ConteneurAccuiel = new javax.swing.JDesktopPane();
         jPanel2 = new javax.swing.JPanel();
         Enregistrer = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         ListeEud = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
+        conteneur = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -40,34 +41,6 @@ public class formaccuiel extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout ConteneurAccuielLayout = new javax.swing.GroupLayout(ConteneurAccuiel);
-        ConteneurAccuiel.setLayout(ConteneurAccuielLayout);
-        ConteneurAccuielLayout.setHorizontalGroup(
-            ConteneurAccuielLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-        );
-        ConteneurAccuielLayout.setVerticalGroup(
-            ConteneurAccuielLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ConteneurAccuiel)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ConteneurAccuiel)
-                .addContainerGap())
-        );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -115,7 +88,18 @@ public class formaccuiel extends javax.swing.JFrame {
                 .addComponent(ListeEud, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addContainerGap(338, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout conteneurLayout = new javax.swing.GroupLayout(conteneur);
+        conteneur.setLayout(conteneurLayout);
+        conteneurLayout.setHorizontalGroup(
+            conteneurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 637, Short.MAX_VALUE)
+        );
+        conteneurLayout.setVerticalGroup(
+            conteneurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Accueil");
@@ -124,6 +108,16 @@ public class formaccuiel extends javax.swing.JFrame {
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenuItem1.setText("Quitter");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseClicked(evt);
+            }
+        });
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -146,7 +140,7 @@ public class formaccuiel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(conteneur)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -154,8 +148,10 @@ public class formaccuiel extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(conteneur))
                 .addContainerGap())
         );
 
@@ -167,8 +163,25 @@ public class formaccuiel extends javax.swing.JFrame {
     }//GEN-LAST:event_EnregistrerActionPerformed
 
     private void ListeEudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListeEudActionPerformed
+       ListeEtudiants liste = new ListeEtudiants();
+        liste.setVisible(true);
+        liste.setSize(637, 468);
+        conteneur.add(liste);
+        
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_ListeEudActionPerformed
+
+    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+         int dialog=JOptionPane.showConfirmDialog(null,"Voulez vous quitter?",
+                "Confirmation",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(dialog==JOptionPane.YES_OPTION) System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,15 +219,14 @@ public class formaccuiel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane ConteneurAccuiel;
     private javax.swing.JButton Enregistrer;
     private javax.swing.JButton ListeEud;
+    private javax.swing.JDesktopPane conteneur;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
