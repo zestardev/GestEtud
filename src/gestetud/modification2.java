@@ -23,6 +23,7 @@ public class modification2 extends javax.swing.JFrame {
     public void setmatricule(String m)
     {
         txtmatricule.setText(m);
+        txtmatricule.setEnabled(false);
     }
      public void setnom(String n)
     {
@@ -189,12 +190,20 @@ public class modification2 extends javax.swing.JFrame {
 
     private void btnenrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenrActionPerformed
         // TODO add your handling code here:
+        
         String matricule= txtmatricule.getText();
         int matri= Integer.parseInt(matricule);
         String nom= txtnom.getText();
         String prenom=txtprenom.getText();
-       
-        etudiant.enregistrer(matri, nom, prenom);
+        
+        
+        
+        try {
+            etudiant.modifier(matri, nom, prenom);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(modification2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         this.dispose();
 
     }//GEN-LAST:event_btnenrActionPerformed
