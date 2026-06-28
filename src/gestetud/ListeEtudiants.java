@@ -28,26 +28,27 @@ public class ListeEtudiants extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         txtRecherche = new javax.swing.JTextField();
-        btnRecherche = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEtudiants = new javax.swing.JTable();
+        btnRecherche1 = new javax.swing.JButton();
+        btnRecherche = new javax.swing.JButton();
+        btnRecherche2 = new javax.swing.JButton();
+        btnRecherche3 = new javax.swing.JButton();
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtRecherche.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtRecherche.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRechercheFocusGained(evt);
+            }
+        });
         txtRecherche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRechercheActionPerformed(evt);
             }
         });
-
-        btnRecherche.setBackground(new java.awt.Color(0, 51, 255));
-        btnRecherche.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnRecherche.setForeground(new java.awt.Color(255, 255, 255));
-        btnRecherche.setText("Recherche");
-        btnRecherche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRechercheActionPerformed(evt);
-            }
-        });
+        jPanel1.add(txtRecherche, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 467, 36));
 
         tableEtudiants.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableEtudiants.setModel(new javax.swing.table.DefaultTableModel(
@@ -60,50 +61,77 @@ public class ListeEtudiants extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tableEtudiants);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(txtRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnRecherche, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))
-                    .addContainerGap()))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtRecherche, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                        .addComponent(btnRecherche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 625, 370));
+
+        btnRecherche1.setBackground(new java.awt.Color(0, 51, 255));
+        btnRecherche1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnRecherche1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecherche1.setText("Recherche");
+        btnRecherche1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecherche1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRecherche1, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 6, 152, 36));
+
+        btnRecherche.setBackground(new java.awt.Color(255, 0, 0));
+        btnRecherche.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnRecherche.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecherche.setText("Supprimer");
+        btnRecherche.setEnabled(false);
+        btnRecherche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRechercheActionPerformed(evt);
+            }
+        });
+
+        btnRecherche2.setBackground(new java.awt.Color(0, 204, 0));
+        btnRecherche2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnRecherche2.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecherche2.setText("Modifier");
+        btnRecherche2.setEnabled(false);
+        btnRecherche2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecherche2ActionPerformed(evt);
+            }
+        });
+
+        btnRecherche3.setBackground(new java.awt.Color(0, 204, 0));
+        btnRecherche3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnRecherche3.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecherche3.setText("Actualiser");
+        btnRecherche3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecherche3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRecherche3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRecherche2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRecherche2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRecherche3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -116,9 +144,28 @@ public class ListeEtudiants extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRechercheActionPerformed
 
+    private void btnRecherche1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecherche1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRecherche1ActionPerformed
+
+    private void btnRecherche2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecherche2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRecherche2ActionPerformed
+
+    private void btnRecherche3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecherche3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRecherche3ActionPerformed
+
+    private void txtRechercheFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRechercheFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRechercheFocusGained
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRecherche;
+    private javax.swing.JButton btnRecherche1;
+    private javax.swing.JButton btnRecherche2;
+    private javax.swing.JButton btnRecherche3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableEtudiants;
