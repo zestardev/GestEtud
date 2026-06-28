@@ -32,17 +32,21 @@ public class etudiant {
             Logger.getLogger(etudiant.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+   
     
     public static void modifier(int matricule,String nom,String prenom) throws ClassNotFoundException{
         try {
             c=connexionbd.seconnecter();
             s=c.createStatement();
-            s.executeUpdate("UPDATE etudiant SET matricule="+matricule+", nom='"+nom+"', prenom= '"+prenom+"' "+" WHERE matricule="+matricule);
+            s.executeUpdate("UPDATE etudiant SET nom='" + nom + "', prenom='" + prenom + "' WHERE matricule=" + matricule);
             JOptionPane.showMessageDialog(null,"Modification effectuée");
             c.close();s.close();r.close();
         } catch (SQLException ex) {
             Logger.getLogger(etudiant.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
     
 }
     
