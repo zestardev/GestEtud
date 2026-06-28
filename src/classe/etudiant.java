@@ -20,11 +20,11 @@ public class etudiant {
     private static Connection c=null;
     private static Statement s=null;
     private static final ResultSet r=null;
-    public static void supprimer(int id){
+    public static void supprimer(int matricule) throws ClassNotFoundException{
         try {
             c=connexionbd.seconnecter();
             s=c.createStatement();
-            s.executeUpdate("DELETE FROM etudiant WHERE id="+id+"");
+            s.executeUpdate("DELETE FROM etudiant WHERE matricule="+matricule+"");
             JOptionPane.showMessageDialog(null,"Suppression effectuée");
             c.close();s.close();r.close();
         } catch (SQLException ex) {
@@ -32,11 +32,11 @@ public class etudiant {
         }
     }
     
-    public static void modifier(int aid,int nid){
+    public static void modifier(int matricule,String nom,String prenom) throws ClassNotFoundException{
         try {
             c=connexionbd.seconnecter();
             s=c.createStatement();
-            s.executeUpdate("UPDATE etudiant SET id="+nid+" WHERE id="+aid+"");
+            s.executeUpdate("UPDATE etudiant SET matricule="+matricule+" nom="+nom+" prenom= "+prenom+"  WHERE matricule="+matricule+"");
             JOptionPane.showMessageDialog(null,"Modification effectuée");
             c.close();s.close();r.close();
         } catch (SQLException ex) {
@@ -45,28 +45,41 @@ public class etudiant {
     
 }
     
-    public static void enregistrer(int id){
+    public static void enregistrer(int matricule,String nom,String prenom){
         try {
             c=connexionbd.seconnecter();
             s=c.createStatement();
-//            pour chaine de caractere '"+taux+"'
-            s.executeUpdate("INSERT INTO etudiant(id)VALUES("+id+")");
+               
+            s.executeUpdate("INSERT INTO etudiant(nom,prenom,matricule) VALUES('"+nom+"','"+prenom+"',"+matricule+")");
             JOptionPane.showMessageDialog(null,"Enregistrement effectué");
+            c.close();s.close();r.close();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(etudiant.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
     
-     public static void recuperer(int id){
+     public static void recuperer(int matricule){
         try {
             c=connexionbd.seconnecter();
             s=c.createStatement();
-            s.executeUpdate("SELECT * FROM etudiant WHERE id="+id+"");
+            s.executeQuery("SELECT * FROM etudiant WHERE matricule="+matricule+"");
             JOptionPane.showMessageDialog(null,"Récupération effectuée avec succès");
             c.close();s.close();r.close();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(etudiant.class.getName()).log(Level.SEVERE, null, ex);
         }
    } 
+     public static void recherche(int matricule,String nom,String prenom){
+        try {
+            c=connexionbd.seconnecter();
+            s=c.createStatement();
+            s.executeQuery("SELECT * FROM etudiant WHERE matricule="+matricule+"");
+            JOptionPane.showMessageDialog(null,"Récupération effectuée avec succès");
+            c.close();s.close();r.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(etudiant.class.getName()).log(Level.SEVERE, null, ex);
+        }
+   } 
+     
 }
