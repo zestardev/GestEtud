@@ -4,6 +4,9 @@
  */
 package gestetud;
 
+import classe.connexionbd;
+import classe.etudiant;
+
 /**
  *
  * @author abdel
@@ -33,14 +36,15 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
         txtnom = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtprenom = new javax.swing.JTextField();
-        btnannuler2 = new javax.swing.JButton();
+        btnnouv = new javax.swing.JButton();
+        btnenregis = new javax.swing.JButton();
         btnannuler = new javax.swing.JButton();
-        btnannuler1 = new javax.swing.JButton();
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Matricule:");
 
         txtmatricule.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtmatricule.setEnabled(false);
         txtmatricule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtmatriculeActionPerformed(evt);
@@ -50,6 +54,7 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Nom:");
 
+        txtnom.setEnabled(false);
         txtnom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnomActionPerformed(evt);
@@ -59,39 +64,42 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setText("Prénom:");
 
+        txtprenom.setEnabled(false);
         txtprenom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtprenomActionPerformed(evt);
             }
         });
 
-        btnannuler2.setBackground(new java.awt.Color(0, 204, 51));
-        btnannuler2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnannuler2.setForeground(new java.awt.Color(255, 255, 255));
-        btnannuler2.setText("Nouveau");
-        btnannuler2.addActionListener(new java.awt.event.ActionListener() {
+        btnnouv.setBackground(new java.awt.Color(0, 204, 51));
+        btnnouv.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnnouv.setForeground(new java.awt.Color(255, 255, 255));
+        btnnouv.setText("Nouveau");
+        btnnouv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnannuler2ActionPerformed(evt);
+                btnnouvActionPerformed(evt);
             }
         });
 
-        btnannuler.setBackground(new java.awt.Color(0, 204, 51));
-        btnannuler.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnenregis.setBackground(new java.awt.Color(0, 204, 51));
+        btnenregis.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnenregis.setForeground(new java.awt.Color(255, 255, 255));
+        btnenregis.setText("Enregistrer");
+        btnenregis.setEnabled(false);
+        btnenregis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnenregisActionPerformed(evt);
+            }
+        });
+
+        btnannuler.setBackground(new java.awt.Color(204, 0, 0));
+        btnannuler.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnannuler.setForeground(new java.awt.Color(255, 255, 255));
-        btnannuler.setText("Enregistrer");
+        btnannuler.setText("Annuler");
+        btnannuler.setEnabled(false);
         btnannuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnannulerActionPerformed(evt);
-            }
-        });
-
-        btnannuler1.setBackground(new java.awt.Color(204, 0, 0));
-        btnannuler1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnannuler1.setForeground(new java.awt.Color(255, 255, 255));
-        btnannuler1.setText("Annuler");
-        btnannuler1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnannuler1ActionPerformed(evt);
             }
         });
 
@@ -101,11 +109,11 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnannuler2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnnouv, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnannuler, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnenregis, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnannuler1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnannuler, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(103, 103, 103)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -140,9 +148,9 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnannuler2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnannuler, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnannuler1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnnouv, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnenregis, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnannuler, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0))
         );
 
@@ -166,6 +174,7 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
 
     private void txtmatriculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmatriculeActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtmatriculeActionPerformed
 
     private void txtnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomActionPerformed
@@ -176,26 +185,53 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtprenomActionPerformed
 
+    private void btnenregisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenregisActionPerformed
+        // TODO add your handling code here:
+        
+        String matricule= txtmatricule.getText();
+        int matri= Integer.parseInt(matricule);
+        String nom= txtnom.getText();
+        String prenom=txtprenom.getText();
+        txtnom.setText("");
+        txtprenom.setText("");
+        txtmatricule.setText("");
+        etudiant.enregistrer(matri, nom, prenom);
+        btnenregis.setEnabled(false);
+        btnannuler.setEnabled(false);
+        btnnouv.setEnabled(true);
+        
+        
+           
+    }//GEN-LAST:event_btnenregisActionPerformed
+
     private void btnannulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnannulerActionPerformed
         // TODO add your handling code here:
         txtnom.setText("");
         txtprenom.setText("");
         txtmatricule.setText("");
+        txtmatricule.setEnabled(false);
+        txtnom.setEnabled(false);
+        txtprenom.setEnabled(false);
+        btnenregis.setEnabled(false);
+        btnannuler.setEnabled(false);
+        btnnouv.setEnabled(true);
     }//GEN-LAST:event_btnannulerActionPerformed
 
-    private void btnannuler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnannuler1ActionPerformed
+    private void btnnouvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnouvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnannuler1ActionPerformed
-
-    private void btnannuler2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnannuler2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnannuler2ActionPerformed
+        txtmatricule.setEnabled(true);
+        txtmatricule.grabFocus();
+        txtnom.setEnabled(true);
+        txtprenom.setEnabled(true);        btnenregis.setEnabled(true);
+        btnannuler.setEnabled(true);
+        btnnouv.setEnabled(false);
+    }//GEN-LAST:event_btnnouvActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnannuler;
-    private javax.swing.JButton btnannuler1;
-    private javax.swing.JButton btnannuler2;
+    private javax.swing.JButton btnenregis;
+    private javax.swing.JButton btnnouv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

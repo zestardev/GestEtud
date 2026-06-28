@@ -41,11 +41,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="btnannuler2" min="-2" pref="118" max="-2" attributes="0"/>
+                  <Component id="btnnouv" min="-2" pref="118" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btnenregis" min="-2" pref="118" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnannuler" min="-2" pref="118" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnannuler1" min="-2" pref="118" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="103" pref="103" max="-2" attributes="0"/>
@@ -89,9 +89,9 @@
                   </Group>
                   <EmptySpace pref="154" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnannuler2" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnnouv" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnenregis" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="btnannuler" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="btnannuler1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
@@ -112,6 +112,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="24" style="0"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtmatriculeActionPerformed"/>
@@ -126,6 +127,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtnom">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnomActionPerformed"/>
           </Events>
@@ -139,11 +143,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtprenom">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtprenomActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnannuler2">
+        <Component class="javax.swing.JButton" name="btnnouv">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="cc" red="0" type="rgb"/>
@@ -157,10 +164,10 @@
             <Property name="text" type="java.lang.String" value="Nouveau"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnannuler2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnnouvActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnannuler">
+        <Component class="javax.swing.JButton" name="btnenregis">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="cc" red="0" type="rgb"/>
@@ -172,12 +179,13 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Enregistrer"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnannulerActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnenregisActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnannuler1">
+        <Component class="javax.swing.JButton" name="btnannuler">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="cc" type="rgb"/>
@@ -189,9 +197,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Annuler"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnannuler1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnannulerActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
