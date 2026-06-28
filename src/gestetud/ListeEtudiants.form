@@ -20,11 +20,11 @@
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnRecherche3" min="-2" pref="152" max="-2" attributes="0"/>
+                      <Component id="btnactu" min="-2" pref="152" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRecherche2" min="-2" pref="152" max="-2" attributes="0"/>
+                      <Component id="btnmodif" min="-2" pref="152" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRecherche" min="-2" pref="152" max="-2" attributes="0"/>
+                      <Component id="btnsupp" min="-2" pref="152" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -39,9 +39,9 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="14" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnRecherche" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="btnRecherche2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="btnRecherche3" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnsupp" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnmodif" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnactu" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -118,6 +118,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableEtudiantsMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -133,6 +136,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Recherche"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRecherche1ActionPerformed"/>
@@ -145,7 +149,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnRecherche">
+    <Component class="javax.swing.JButton" name="btnsupp">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -160,10 +164,10 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRechercheActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsuppActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRecherche2">
+    <Component class="javax.swing.JButton" name="btnmodif">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="cc" red="0" type="rgb"/>
@@ -178,10 +182,10 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRecherche2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmodifActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRecherche3">
+    <Component class="javax.swing.JButton" name="btnactu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="cc" red="0" type="rgb"/>
@@ -195,7 +199,7 @@
         <Property name="text" type="java.lang.String" value="Actualiser"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRecherche3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnactuActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

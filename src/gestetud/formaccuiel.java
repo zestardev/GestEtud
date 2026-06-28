@@ -17,6 +17,8 @@ public class formaccuiel extends javax.swing.JFrame {
      */
     public formaccuiel() {
         initComponents();
+        
+        
     }
 
     /**

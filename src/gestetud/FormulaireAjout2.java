@@ -54,6 +54,7 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Nom:");
 
+        txtnom.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtnom.setEnabled(false);
         txtnom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +65,7 @@ public class FormulaireAjout2 extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setText("Prénom:");
 
+        txtprenom.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtprenom.setEnabled(false);
         txtprenom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
